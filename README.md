@@ -11,3 +11,4 @@
 - HTML, CSS, JS
 - Razor View
 - ASP.NET MVC + SQL Server
+https://docs.google.com/spreadsheets/d/15y9V8gh1NCX1VSFAIo7niAGJPjTId5KOvmK5JRvssOE/edit#gid=0
