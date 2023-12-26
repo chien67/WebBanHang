@@ -17,3 +17,4 @@ https://docs.google.com/spreadsheets/d/15y9V8gh1NCX1VSFAIo7niAGJPjTId5KOvmK5JRvs
 # 
 - https://viblo.asia/p/validate-du-lieu-va-kieu-du-lieu-trong-code-first-E7bGo9zdR5e2
 - https://www.c-sharpcorner.com/UploadFile/84c85b/object-oriented-programming-using-C-Sharp-net/
+- Thiết lập mối quan hệ giữa các bảng:https://xuanthulab.net/ef-core-tao-model-trong-entity-framework-anh-xa-cac-doi-tuong-vao-database-c-csharp.html
