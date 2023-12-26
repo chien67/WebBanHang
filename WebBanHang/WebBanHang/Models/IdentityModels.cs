@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using WebBanHang.Models.EF;
 
 namespace WebBanHang.Models
 {
@@ -24,7 +25,17 @@ namespace WebBanHang.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Adv> Advs { get; set; }
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<New> News { get; set; }
+        public DbSet<SystemSetting> SystemSettings { get; set; }
+        public DbSet<ProductCategory> ProductCategories { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<DkEmail> DkEmails { get; set; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

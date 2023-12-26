@@ -177,6 +177,19 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\EF\Adv.cs" />
+    <Compile Include="Models\EF\Category.cs" />
+    <Compile Include="Models\EF\CommonAbstract.cs" />
+    <Compile Include="Models\EF\Contact.cs" />
+    <Compile Include="Models\EF\DkEmail.cs" />
+    <Compile Include="Models\EF\New.cs" />
+    <Compile Include="Models\EF\Order.cs" />
+    <Compile Include="Models\EF\OrderDetail.cs" />
+    <Compile Include="Models\EF\Post.cs" />
+    <Compile Include="Models\EF\Product.cs" />
+    <Compile Include="Models\EF\ProductCategory.cs" />
+    <Compile Include="Models\EF\ProductImage.cs" />
+    <Compile Include="Models\EF\SystemSetting.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -2183,6 +2196,7 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_PatialSiderbar.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
