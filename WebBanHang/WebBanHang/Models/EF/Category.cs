@@ -10,6 +10,10 @@ namespace WebBanHang.Models.EF
     [Table("Category")]
     public class Category: CommonAbstract
     {
+        public Category() 
+        {
+            this.News = new HashSet<New>();        
+        }
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
@@ -19,6 +23,8 @@ namespace WebBanHang.Models.EF
         public string SeoTitle { get; set; }
         public string SeoDescription { get; set; }
         public string SeoKeywords { get; set; }
+        public ICollection<New> News { get; set; }
+        public ICollection<Post> Posts { get; set; }
 
     }
 }

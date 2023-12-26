@@ -10,6 +10,9 @@ namespace WebBanHang.Models.EF
     [Table("OrderCart")]
     public class Order: CommonAbstract
     {
+        public Order() { 
+            this.OrderDetails = new HashSet<OrderDetail>();
+        }
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
@@ -27,5 +30,6 @@ namespace WebBanHang.Models.EF
         public int Address { get; set; }
         public int TotalMoney { get; set; }
         public int Quality { get; set; }
+        public ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

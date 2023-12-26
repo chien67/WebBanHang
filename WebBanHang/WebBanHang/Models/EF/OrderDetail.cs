@@ -11,11 +11,14 @@ namespace WebBanHang.Models.EF
     public class OrderDetail
     {
         [Key]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        [Column(Order =0)]
         public int OrderId { get; set; }
+
+        [Column(Order = 1)]
         public int ProductId { get; set; }
         public int Quality { get; set; }
         public decimal Price { get; set; }
+        public virtual Order Order{ get; set; }
+        public virtual Product Product { get; set; }
     }
 }
