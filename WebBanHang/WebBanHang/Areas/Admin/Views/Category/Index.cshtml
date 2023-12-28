@@ -59,12 +59,20 @@
                 <tbody>
                     @if (Model != null)
                     {
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        var i = 1;
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@i</td>
+                                <td>@item.Title</td>
+                                <td>@item.Position</td>
+                                <td>
+                                    <a href="/admin/category/edit/@item.Id" class="btn btn-sm btn-primary">Sửa</a>
+                                    <a href="/admin/category/edit/@item.Id" class="btn btn-sm btn-danger">Xoá</a>
+                                </td>
+                            </tr>
+                            i++;
+                        }
                     }
                     else
                     {

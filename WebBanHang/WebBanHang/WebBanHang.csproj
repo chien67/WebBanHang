@@ -181,8 +181,17 @@
     <Compile Include="Migrations\202312261636102_CreateDatabase.designer.cs">
       <DependentUpon>202312261636102_CreateDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312281311070_UpdateCategory.cs" />
+    <Compile Include="Migrations\202312281311070_UpdateCategory.designer.cs">
+      <DependentUpon>202312281311070_UpdateCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312281353262_UpdateData.cs" />
+    <Compile Include="Migrations\202312281353262_UpdateData.designer.cs">
+      <DependentUpon>202312281353262_UpdateData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Common\Filter.cs" />
     <Compile Include="Models\EF\Adv.cs" />
     <Compile Include="Models\EF\Category.cs" />
     <Compile Include="Models\EF\CommonAbstract.cs" />
@@ -2205,6 +2214,7 @@
     <Content Include="Areas\Admin\Views\Shared\_PatialSiderbar.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2285,6 +2295,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202312261636102_CreateDatabase.resx">
       <DependentUpon>202312261636102_CreateDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312281311070_UpdateCategory.resx">
+      <DependentUpon>202312281311070_UpdateCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312281353262_UpdateData.resx">
+      <DependentUpon>202312281353262_UpdateData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
