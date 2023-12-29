@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -43,7 +44,21 @@ namespace WebBanHang.Areas.Admin.Controllers
         public ActionResult Edit(int id)
         {
             var item = db.Categories.Find(id);
-            return View();
+
+            Category model = new Category();
+            var x = db.Categories.Find(id);
+
+            model.Title = x.Title;
+            model.Position = x.Position;
+            model.Description = x.Description;
+            model.SeoTitle = x.SeoTitle;
+            model.SeoDescription = x.SeoDescription;
+            model.SeoKeywords = x.SeoKeywords;
+            model.Alias = x.Alias;
+            model.ModifiedDate = x.ModifiedDate;
+            model.ModifierBy = x.ModifierBy;
+
+            return View(x);
         }
 
         [HttpPost]
@@ -69,6 +84,17 @@ namespace WebBanHang.Areas.Admin.Controllers
             }
             return View(model);
         }
-
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            var item = db.Categories.Find(id);
+            if(item != null)
+            {
+                db.Categories.Remove(item);
+                db.SaveChanges();
+                return Json(new { success = true });
+            }
+            return Json(new { success = false});
+        }
     }
 }

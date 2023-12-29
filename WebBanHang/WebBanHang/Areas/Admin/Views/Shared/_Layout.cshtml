@@ -34,7 +34,7 @@
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
 
-            @RenderSection("naviheader", required:false)
+            @RenderSection("naviheader", required: false)
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
@@ -217,7 +217,7 @@
     @*<script src="~/Content/Clients/dist/js/demo.js"></script>*@
     <!-- Page specific script -->
     <script>
-    $(function () {
+        $(function () {
             //Initialize Select2 Elements
             $('.select2').select2()
 
@@ -352,6 +352,5 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-</body>
 </body>
 </html>
