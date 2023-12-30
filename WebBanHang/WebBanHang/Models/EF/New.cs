@@ -13,6 +13,7 @@ namespace WebBanHang.Models.EF
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        [Required(ErrorMessage ="Bạn không thể để trống tiêu đề tin")]
         public string Title { get; set; }
         public string Alias { get; set; }
         public int CategoryId { get; set; }
