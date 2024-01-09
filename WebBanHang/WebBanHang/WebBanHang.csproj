@@ -194,6 +194,10 @@
     <Compile Include="Migrations\202312281353262_UpdateData.designer.cs">
       <DependentUpon>202312281353262_UpdateData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202401091157147_UpdateDB.cs" />
+    <Compile Include="Migrations\202401091157147_UpdateDB.designer.cs">
+      <DependentUpon>202401091157147_UpdateDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Common\Filter.cs" />
@@ -3126,6 +3130,7 @@
     <Content Include="Content\ckeditor\ckeditor\samples\sample_posteddata.php" />
     <Content Include="Content\ckeditor\ckeditor\skins\moono\readme.md" />
     <Content Include="Content\ckfinder\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
+    <Content Include="Areas\Admin\Views\News\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -3213,6 +3218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312281353262_UpdateData.resx">
       <DependentUpon>202312281353262_UpdateData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401091157147_UpdateDB.resx">
+      <DependentUpon>202401091157147_UpdateDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
