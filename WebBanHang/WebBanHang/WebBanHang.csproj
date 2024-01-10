@@ -198,6 +198,10 @@
     <Compile Include="Migrations\202401091157147_UpdateDB.designer.cs">
       <DependentUpon>202401091157147_UpdateDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202401100706402_UpdateIsActive.cs" />
+    <Compile Include="Migrations\202401100706402_UpdateIsActive.designer.cs">
+      <DependentUpon>202401100706402_UpdateIsActive.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Common\Filter.cs" />
@@ -3221,6 +3225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202401091157147_UpdateDB.resx">
       <DependentUpon>202401091157147_UpdateDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401100706402_UpdateIsActive.resx">
+      <DependentUpon>202401100706402_UpdateIsActive.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
