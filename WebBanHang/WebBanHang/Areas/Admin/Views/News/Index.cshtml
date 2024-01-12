@@ -45,12 +45,14 @@
             <h3 class="card-title">Danh sách @ViewBag.Title</h3>
             <div class="card-tools">
                 <a href="/admin/news/add" class="btn btn-primary">Thêm mới</a>
+                <a href="#" class="btn btn-danger" id="btnDeleteAll">Xoá tất cả</a>
             </div>
         </div>
         <div class="card-body">
             <table class="table table-hover">
                 <thead>
                     <tr>
+                        <th><input type="checkbox" id="SelectAll" /></th>
                         <th>STT</th>
                         <th>Tiêu đề tin</th>
                         <th>Hình ảnh</th>
@@ -66,15 +68,16 @@
                         var i = 1;
                         foreach (var item in Model)
                         {
-                            var strCheck = item.IsAvtive ? "<a href='#'> <i class='fa fa-check text-success'></i> </a>" : "<a href='#'> <i class='fas fa-times text-danger'></i> </a>";
+                            var strCheck = item.IsAvtive ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
                             <tr id="trow_@item.Id">
+                                <td><input type="checkbox" class="cbkItem" value="@item.Id" /></td>
                                 <td>@i</td>
                                 <td>@item.Title</td>
                                 <td><img src="@item.Image" width="70" /></td>
                                 <td>@item.CreatedDate.ToString("dd/MM/yyyy")</td>
                                 <td>@item.Description</td>
                                 <td class="text-center">
-                                    @Html.Raw(strCheck)
+                                    <a href='#' data-id="@item.Id" class="btnActive">@Html.Raw(strCheck)</a>
                                 </td>
 
                                 <td>
@@ -107,6 +110,62 @@
 @section scripts{
     <script>
         $(document).ready(function () {
+            //Xoá tất cả
+            $('body').on('click', '#btnDeleteAll', function (e) {
+                e.preventDefault();
+                var str = "";
+                var checkBox = $(this).parents('.card').find('tr td input:checkbox');
+                var i = 0;
+                checkBox.each(function () {
+                    if (this.checked) {
+                        checkBox.attr('selected', 'checked');
+                        var _id = $(this).val();
+                        if (i === 0) {
+                            str += _id;
+                        } else {
+                            str += "," + _id;
+                        }
+                        i++;
+                    }
+                    else {
+                        checkBox.attr('selected', '');
+                    }
+                });
+                if (str.length >0) {
+                    var conf = confirm('Bạn có muốn xoá bản ghi này không');
+                    if (conf === true) {
+                        $.ajax({
+                            url:'/admin/news/deleteAll',
+                            type: 'POST',
+                            data: { ids: str },
+                            success: function (rs) {
+                                if (rs.success) {
+                                    location.reload();
+                                }
+                            }
+
+                        });
+                    }
+                }
+                else {
+
+                };
+            });
+            // Chọn tất cả tin tức
+            $('body').on('change', '#SelectAll', function () {
+                var checkStatus = this.checked;
+                var checkBox = $(this).parents('.card-body').find('tr td input:checkbox');
+                checkBox.each(function () {
+                    this.checked = checkStatus;
+                    if (this.checked) {
+                        checkBox.attr('selected', 'checked');
+                    }
+                    else {
+                        checkBox.attr('selected', '');
+                    };
+                });
+            });
+            // Hỏi trước khi xoá
             $('body').on('click', '.btnDelete', function () {
                 var id = $(this).data("id");
                 var conf = confirm('Bạn có muốn xoá không?')
@@ -122,6 +181,28 @@
                         }
                     });
                 }
+            });
+
+            // Thay đổi trạng thái
+            $('body').on('click', '.btnActive', function (e) {
+                e.preventDefault();
+                var btn = $(this);
+                var id = $(this).data("id");
+                $.ajax({
+                    url: '/admin/news/IsActive',
+                    type: 'POST',
+                    data: { id: id },
+                    success: function (rs) {
+                        if (rs.success) {
+                            if (rs.IsActive) {
+                                btn.html("<i class='fa fa-check text-success'></i>")
+                            }
+                            else {
+                                btn.html("<i class='fas fa-times text-danger'></i>")
+                            }
+                        }
+                    }
+                });
             });
         });
     </script>
